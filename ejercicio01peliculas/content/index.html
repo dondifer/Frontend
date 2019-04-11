@@ -5,13 +5,13 @@
         <meta charset="UTF-8"/>
         <script type="text/javascript" src="js/ejercicio01.js"></script>
     </head>
-    <body>
+    <body onload="actualizar()">
         <header>
             <h1>Peliculas Form</h1>
         </header>
 
         <section>
-                <form >
+                <form  >
                    Título:             <input type="text" placeholder="Lo que sea" id="titulo"/>
                    Director:           <input type="text" placeholder="un tio..." id="director"/>
                    <br/>
@@ -42,9 +42,10 @@
 
                    
     
-                    <input type="button" onclick="insertar()" value="Inserta tu mierda"/>
-                    <input type="button" onclick="borrar()" value="Borra tu mierda"/>
-                    <input type="button" onclick="modificar()" value="Modifica tu mierda"/>
+                    <input type="button" onclick="insertar()" value="Insertar/Modificar"/>
+                    <input type="button" onclick="borrar()" value="Borrar"/>
+                    <!--<input type="button" onclick="actualizar()" value="Actualizar"/>-->
+                    <input type="button" onclick="limpiar()" value="Limpiar"/>
     
     
                 </form>
