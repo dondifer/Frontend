@@ -1,3 +1,5 @@
+
+//DID:Función insertar/modificar
 function insertar(){
     var titulo=document.getElementById('titulo').value;
     var director=document.getElementById('director').value;
@@ -63,6 +65,36 @@ function insertar(){
 
 //------------------------------------------------------------------------------------------------------
 //Insertar en el servidor remoto con ajax
+
+
+
+    var ajax = new XMLHttpRequest();
+    ajax.open("POST","http://192.168.1.63:8080/peliculas/",true);
+    ajax.setRequestHeader(
+        'Content-Type','application/json; charset=utf-8')
+    ajax.onreadystatechange = function (){
+
+        if(ajax.status == 200 && ajax.readyState == 4){
+            datos = JSON.parse(ajax.response)
+            console.log(datos);
+        }
+        console.log(ajax.readyState);
+
+    }
+    
+   
+    ajax.send(
+        JSON.stringify({codId: codid,
+    director: director,
+    fecha: fecha,
+    genero: genero,
+    titulo: titulo,
+    valoracion: " "}));
+
+
+
+
+
  
     
 
@@ -73,7 +105,7 @@ function insertar(){
 //-------------------------------------------------------------------------------------------------------
 
 
-//TODO:Función actualizar
+//DID:Función actualizar
 
 function actualizar(){
 
@@ -243,6 +275,7 @@ if(localStorage.length==0){
 //-------------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------------
 
+//DID:Función limpiar caché
 function limpiar(){
     localStorage.clear();
 }
@@ -252,7 +285,7 @@ function limpiar(){
 //-------------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------------
 
-
+//DID:Función borrar
 function borrar(){
     var titulo=document.getElementById('titulo').value;
     var director=document.getElementById('director').value;
@@ -303,7 +336,24 @@ function borrar(){
 
 
 //------------------------------------------------------------------------------------------------------
-//Borrar en el storage local
+//Borrar en el servidor con ajax
+
+    var ajax = new XMLHttpRequest();
+    ajax.open("DELETE","http://192.168.1.63:8080/peliculas/"+codid);
+    ajax.onreadystatechange = function (){
+
+        if(ajax.status == 200 && ajax.readyState == 4){
+            datos = JSON.parse(ajax.response)
+            console.log(datos);
+        }
+        console.log(ajax.readyState);
+    }
+    
+    ajax.send();
+
+
+
+
 
 
 

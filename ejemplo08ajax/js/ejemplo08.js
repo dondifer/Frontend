@@ -41,6 +41,7 @@ function dameUno(){
     
     ajax.send();
 }
+
 function guardaUno(){
     var ajax = new XMLHttpRequest();
     ajax.open("POST","http://localhost:8080/peliculas/",true);
