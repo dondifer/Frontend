@@ -139,6 +139,43 @@ if(localStorage.length==0){
         if(ajax.status==200 && ajax.readyState == 4){
             var datos = JSON.parse(ajax.responseText);
             console.log(datos);
+
+            for(let i=0;i<datos.length;i++){
+
+
+                var titN=document.createTextNode(datos[i].titulo.value);
+                var direN=document.createTextNode(datos[i].director.value);
+                var codN=document.createTextNode(datos[i].codid.value);
+                var fechN=document.createTextNode(datos[i].fecha.value);
+                var generN = document.createTextNode(datos[i].genero.value);
+        
+        
+        
+        
+                var tabl =document.getElementById("tabla");
+        
+                var row = document.createElement("tr");
+                var column1 = document.createElement("td");
+                var column2 = document.createElement("td");
+                var column3 = document.createElement("td");
+                var column4 = document.createElement("td");
+                var column5 = document.createElement("td");
+        
+                column1.appendChild(codN)
+                column2.appendChild(titN)
+                column3.appendChild(direN)
+                column4.appendChild(fechN)
+                column5.appendChild(generN)
+        
+                row.appendChild(tablecolumn1);
+                row.appendChild(tablecolumn2);
+                row.appendChild(tablecolumn3);
+                row.appendChild(tablecolumn4);
+                row.appendChild(tablecolumn5);
+                tabl.insertBefore(row,tabla.children[1]);
+        
+        
+            }
                
 
         }
@@ -150,42 +187,7 @@ if(localStorage.length==0){
 
 
 
-    for(let i=0;i<datos.length;i++){
-
-
-        var titN=document.createTextNode(datos[i].titulo.value);
-        var direN=document.createTextNode(datos[i].director.value);
-        var codN=document.createTextNode(datos[i].codid.value);
-        var fechN=document.createTextNode(datos[i].fecha.value);
-        var generN = document.createTextNode(datos[i].genero.value);
-
-
-
-
-        var tabl =document.getElementById("tabla");
-
-        var row = document.createElement("tr");
-        var column1 = document.createElement("td");
-        var column2 = document.createElement("td");
-        var column3 = document.createElement("td");
-        var column4 = document.createElement("td");
-        var column5 = document.createElement("td");
-
-        column1.appendChild(codN)
-        column2.appendChild(titN)
-        column3.appendChild(direN)
-        column4.appendChild(fechN)
-        column5.appendChild(generN)
-
-        row.appendChild(tablecolumn1);
-        row.appendChild(tablecolumn2);
-        row.appendChild(tablecolumn3);
-        row.appendChild(tablecolumn4);
-        row.appendChild(tablecolumn5);
-        tabl.insertBefore(row,tabla.children[1]);
-
-
-    }
+    
 
 
    
