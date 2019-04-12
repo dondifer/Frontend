@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>PELIS</title>
+        <meta charset="UTF-8"/>
+        <script type="text/javascript" src="js/ejercicio01.js"></script>
+    </head>
+    <body onload="actualizar()">
+        <header>
+            <h1>Peliculas Form</h1>
+        </header>
+
+        <section>
+                <form  >
+                   Título:             <input type="text" placeholder="Lo que sea" id="titulo"/>
+                   Director:           <input type="text" placeholder="un tio..." id="director"/>
+                   <br/>
+                   <br/>
+                   COD-ID:<input 
+                   type="text" 
+                   placeholder="ABC-12345-BA"
+                   required
+                   pattern="[A-Z]{3}-[0-9]{5}-[A-Z]{2}" 
+                   id="codid"/>
+                   <br/>
+                   <br/>
+                   Fecha de Publicacion: <input type="date" id="fecha"/>
+                    Genero:
+                   <select id="Genero">
+                        <option value="Drama">Drama</option> 
+                        <option value="Comedia">Comedia</option> 
+                        <option value="Terror">Terror</option>
+                        <option value="Accion">Accion</option> 
+                        <option value="Documental">Documental</option> 
+                        <option value="Thriller">Thriller</option> 
+                     </select>
+
+                    <br/>
+                    <br/>
+
+
+
+                   
+    
+                    <input type="button" onclick="insertar()" value="Insertar/Modificar"/>
+                    <input type="button" onclick="borrar()" value="Borrar"/>
+                   <!--<input type="button" onclick="actualizar()" value="Actualizar"/>--> 
+                    <input type="button" onclick="limpiar()" value="Limpiar"/>
+    
+    
+                </form>
+                    
+            </section>
+
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            
+
+            <section>
+                <table id="tabla">
+                    <tr>
+                      <th><span style="font-weight:bold">Código</span></th>
+                      <th><span style="font-weight:bold">Título</span></th>
+                      <th><span style="font-weight:bold">Director</span></th>
+                      <th><span style="font-weight:bold">Fecha de publicación</span></th>
+                      <th><span style="font-weight:bold">Género</span></th>
+                    </tr>
+                    <tr>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    
+                  </table>
+
+            </section>
+    </body>
+</html>
